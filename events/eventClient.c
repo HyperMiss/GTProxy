@@ -90,7 +90,7 @@ void clientReceive(ENetEvent event, ENetPeer* clientPeer, ENetPeer* serverPeer) 
 
             printf("[Client] Packet 2: received packet text: %s\n", packetText);
 
-            if ((packetText + 19)[0] == '/') {
+            if ((packetText + 19)[0] == '/he ') {
                 char** command = strsplit(packetText + 19, " ", 0);
                 if (isStr(command[0], "/proxyhelp")) {
                     sendPacket(3, "action|log\nmsg|>> Commands: /helloworld /testarg <your arg> /testdialog /warp <name world> /netid", clientPeer);
