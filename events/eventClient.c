@@ -90,8 +90,25 @@ void clientReceive(ENetEvent event, ENetPeer* clientPeer, ENetPeer* serverPeer) 
 
             printf("[Client] Packet 2: received packet text: %s\n", packetText);
 
-            if ((packetText + 19)[0] == '/') {
-                char** command = strsplit(packetText + 19, " ", 0);
+           if command("/fastdrop") then
+
+    if fastdrop == false then
+
+        fastdrop = true
+
+        log("Fast Drop `2Enabled")
+
+    else
+
+        fastdrop = false
+
+        log("Fast Drop `4Disabled")
+
+    end
+
+return true
+
+end
                 if (isStr(command[0], "/proxyhelp")) {
                     sendPacket(3, "action|log\nmsg|>> Commands: /helloworld /testarg <your arg> /testdialog /warp <name world> /netid", clientPeer);
                 }
